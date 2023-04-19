@@ -1,6 +1,6 @@
+
+
 MovieMaze
-
-
 
 Welcome to MovieMaze, the ultimate destination for movie lovers!
 

@@ -1,13 +1,25 @@
 import React from "react";
-import createRoot from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Provider } from "react-redux";
+import { store } from "./app/store";
+import "./index";
+import ToggleColorModeProvider from "./utils/ToggleColorMode";
 
-import App from "./components/App";
+// const theme = createTheme({});
 
-createRoot.render(
-    <Router>
-    
-    <App />
-    </Router>,
-
- document.getElementById('root')); 
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <ToggleColorModeProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ToggleColorModeProvider>
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
